@@ -12,9 +12,17 @@ def open_and_read_file(file_path):
     the file's contents as one string of text.
     """
 
-    # your code goes here
+    file = open("green-eggs.txt")
 
-    return 'Contents of your file as one long string'
+    full_green_eggs = file.read()
+
+    words = full_green_eggs.split()
+
+    # print(words)
+
+    green_eggs_dict = {}
+
+    return words
 
 
 def make_chains(text_string):
@@ -44,7 +52,13 @@ def make_chains(text_string):
 
     chains = {}
 
-    # your code goes here
+    full_text = open_and_read_file("green-eggs.txt")
+
+    for i in range(len(full_text) - 1):
+        print(full_text[i], full_text[i + 1])
+
+    #make dictionary here
+
 
     return chains
 
@@ -53,6 +67,11 @@ def make_text(chains):
     """Return text from chains."""
 
     words = []
+
+#current_key = chain.split()
+#chosen_word = random.choice(chains[current_key])
+#new-key = (current_key[1], chosen_word)
+    
 
     # your code goes here
 
