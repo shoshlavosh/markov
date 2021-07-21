@@ -2,6 +2,8 @@
 import sys 
 
 argv = sys.argv 
+
+#import random choice
 from random import choice
 
 
@@ -12,15 +14,16 @@ def open_and_read_file(file_path):
     the file's contents as one string of text.
     """
 
+    #open the file and assign it to "file"
     file = open("green-eggs.txt")
 
+    #read the file & assign to a variable
     full_green_eggs = file.read()
 
+    #get rid of whitespace in the text file & assign to "words" variable
     words = full_green_eggs.split()
 
     # print(words)
-
-    green_eggs_dict = {}
 
     return words
 
@@ -52,12 +55,28 @@ def make_chains(text_string):
 
     chains = {}
 
+    
+
     full_text = open_and_read_file("green-eggs.txt")
 
-    for i in range(len(full_text) - 1):
-        print(full_text[i], full_text[i + 1])
+    for i in range(len(full_text) - 2):
+        my_tuple = (full_text[i], full_text[i + 1])
+        # print(my_tuple)
+        values = []
+        chains[my_tuple] = full_text[i + 2]
 
-    #make dictionary here
+        # if my_tuple in chains.keys():
+        #     print(my_tuple)
+
+        #check if the key is in the dictionary
+            #if not, create an empty list
+            #then append the value to the empty list 
+            #if yes, append the value to the existing list
+
+    #  = values.append(my_tuple)
+
+    # print(chains)
+        # return
 
 
     return chains
